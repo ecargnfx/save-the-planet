@@ -8,6 +8,17 @@ import 'package:flutter_hackathon/constants.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        theme: kAppTheme, //look in the constants file
+        home: PickOptions());
+    // can run BarChartSample3() to see chart, routing not working yet due to some type conflict
+  }
+}
+
+class PickOptions extends StatelessWidget {
   final List<DatasetOne> data = [
     DatasetOne(
       year: "2008",
@@ -50,18 +61,6 @@ class MyApp extends StatelessWidget {
       barColor: charts.ColorUtil.fromDartColor(Colors.red),
     ),
   ];
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: kAppTheme, //look in the constants file
-        home: PickOptions());
-    // can run BarChartSample3() to see chart, routing not working yet due to some type conflict
-  }
-}
-
-class PickOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
