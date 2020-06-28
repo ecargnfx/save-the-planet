@@ -1,11 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hackathon/DatasetOne.dart';
+import 'package:flutter_hackathon/Screens/AvgAmtChart.dart';
 import 'package:flutter_hackathon/Screens/SetGoal.dart';
-import 'package:charts_flutter/flutter.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter_hackathon/constants.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  final List<DatasetOne> data = [
+    DatasetOne(
+      year: "2008",
+      avgAmt: 10000000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
+    ),
+    DatasetOne(
+      year: "2009",
+      avgAmt: 11000000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
+    ),
+    DatasetOne(
+      year: "2010",
+      avgAmt: 12000000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
+    ),
+    DatasetOne(
+      year: "2011",
+      avgAmt: 10000000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
+    ),
+    DatasetOne(
+      year: "2012",
+      avgAmt: 8500000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
+    ),
+    DatasetOne(
+      year: "2013",
+      avgAmt: 7700000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
+    ),
+    DatasetOne(
+      year: "2014",
+      avgAmt: 7600000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.blue),
+    ),
+    DatasetOne(
+      year: "2015",
+      avgAmt: 5500000,
+      barColor: charts.ColorUtil.fromDartColor(Colors.red),
+    ),
+  ];
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -29,6 +74,9 @@ class PickOptions extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
+              AvgAmtChart(
+                data: data,
+              ),
               FlatButton(
                   color: Colors.blue,
                   textColor: Colors.white,
