@@ -24,3 +24,8 @@ String kPlasticTopic = 'Reducing Plastic Pollution';
 //placeholder styles for now; change them here
 TextStyle kTodoItemTextStyle = kAppTheme.textTheme.subtitle1;
 TextStyle kTodoNoteTextStyle = kAppTheme.textTheme.subtitle2;
+
+const InputDecoration kTodoInputDecoration = InputDecoration(
+  hintText: 'Add your own task'
+  
+);
