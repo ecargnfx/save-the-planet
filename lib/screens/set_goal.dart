@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon/todo.dart';
 import 'package:flutter_hackathon/constants.dart';
-import 'package:flutter_hackathon/data-lists/racial-justice-action-list.dart';
-import 'package:flutter_hackathon/widgets/todo-item.dart';
+import 'package:flutter_hackathon/data_lists/racial_justice_action_list.dart';
+import 'package:flutter_hackathon/widgets/todo_item.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 class SetGoal extends StatefulWidget {

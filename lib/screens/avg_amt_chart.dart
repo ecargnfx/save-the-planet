@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
-import 'package:flutter_hackathon/dataset-one.dart';
+import 'package:flutter_hackathon/dataset_one.dart';
 
 class AvgAmtChart extends StatelessWidget {
   final List<DatasetOne> data;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hackathon/dataset-one.dart';
-import 'package:flutter_hackathon/Screens/avg-amt-chart.dart';
-import 'package:flutter_hackathon/Screens/set-goal.dart';
+import 'package:flutter_hackathon/dataset_one.dart';
+import 'package:flutter_hackathon/Screens/avg_amt_chart.dart';
+import 'package:flutter_hackathon/Screens/set_goal.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter_hackathon/constants.dart';
 
