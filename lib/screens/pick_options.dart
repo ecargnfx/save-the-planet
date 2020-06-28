@@ -18,42 +18,42 @@ class PickOptions extends StatelessWidget {
                 color: Colors.blue,
                 textColor: Colors.white,
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return SetGoal(kCarbonTopic);
-                      },
-                    ),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) {
+                  //       return SetGoal();
+                  //     },
+                  //   ),
+                  // );
                 },
                 child: Text(kCarbonTopic)),
             FlatButton(
                 color: Colors.blue,
                 textColor: Colors.white,
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return SetGoal(kRaceTopic);
-                      },
-                    ),
-                  );
+                //   Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) {
+                //         return SetGoal();
+                //       },
+                //     ),
+                //   );
                 },
                 child: Text(kRaceTopic)),
             FlatButton(
                 color: Colors.blue,
                 textColor: Colors.white,
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return SetGoal(kPlasticTopic);
-                      },
-                    ),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) {
+                  //       return SetGoal();
+                  //     },
+                  //   ),
+                  // );
                 },
                 child: Text(kPlasticTopic)),
           ],

@@ -1,6 +1,6 @@
 
 
-import 'package:flutter_hackathon/todo.dart';
+import 'package:flutter_hackathon/models/todo.dart';
 
 List<Todo> kRaceList = [
   Todo('Spend 10-30 minutes signing petitions'),

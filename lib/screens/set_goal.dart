@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hackathon/todo.dart';
+import 'package:flutter_hackathon/models/todo.dart';
 import 'package:flutter_hackathon/constants.dart';
 import 'package:flutter_hackathon/data_lists/racial_justice_action_list.dart';
+import 'package:flutter_hackathon/screens/weekly_progress.dart';
 import 'package:flutter_hackathon/widgets/todo_item.dart';
 import 'package:numberpicker/numberpicker.dart';
+import 'package:cross_local_storage/cross_local_storage.dart';
 
 class SetGoal extends StatefulWidget {
-  final String topic;
 
-  SetGoal(this.topic);
 
   @override
   _SetGoalState createState() => _SetGoalState();
@@ -16,26 +16,28 @@ class SetGoal extends StatefulWidget {
 
 class _SetGoalState extends State<SetGoal> {
   int _actionsWeekly = 5;
-  int selectedActions = 0;
-  List<Widget> customTodos = [];
+  List<Widget> todos = [];
   String currentCustomTodo = '';
+  WeeklyProgress currentProgress;
   TextEditingController customTodoController = TextEditingController();
+  LocalStorageInterface storage;
 
-  void saveButtonPressed () {
-
+  void saveTodos () async {
+    
+    
   }
 
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  // }
+  @override
+  void initState() {
+    //todos = storage.getItem('todos');
+    super.initState();
+  }
 
   void addTodoItem() {
     if (currentCustomTodo != '') {
       setState(() {
         Todo todo = Todo(currentCustomTodo);
-        customTodos.insert(0, todoToItem(todo));
+        todos.insert(0, todoToItem(todo));
         currentCustomTodo = '';
         customTodoController.clear();
       });
@@ -67,7 +69,7 @@ class _SetGoalState extends State<SetGoal> {
   List<Widget> todosToShow(List<Widget> suggestions) {
     List<Widget> newList = [];
     //ListTile();
-    newList.addAll(customTodos);
+    newList.addAll(todos);
     newList.addAll(suggestions);
     return newList;
   }
@@ -86,7 +88,7 @@ class _SetGoalState extends State<SetGoal> {
           Text('I will commit to ' ),
           Expanded(
             child: TextFormField(
-              initialValue: widget.topic,
+              initialValue: 'Climate and Social Activism',
             ),
           ),
           Row(
@@ -105,12 +107,12 @@ class _SetGoalState extends State<SetGoal> {
               Text('times per week'),
             ],
           ),
-          Expanded(
-            child: FlatButton(
-              onPressed: saveButtonPressed,
-              child: Text('SAVE'),
-            ),
-          ),
+          // Expanded(
+          //   child: FlatButton(
+          //     onPressed: saveButtonPressed,
+          //     child: Text('SAVE'),
+          //   ),
+          // ),
           Text('I will do this by doing the following:'),
           Row(
             //crossAxisAlignment: CrossAxisAlignment.stretch,

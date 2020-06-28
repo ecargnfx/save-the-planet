@@ -1,6 +1,7 @@
 import 'package:todos_app_core/todos_app_core.dart';
 import 'package:equatable/equatable.dart';
 //import 'package:todos_repository_core/todos_repository_core.dart';
+import 'package:string_validator/string_validator.dart';
 
 class Todo extends Equatable {
   final bool complete;
@@ -33,6 +34,48 @@ class Todo extends Equatable {
     return 'Todo { complete: $complete, task: $task, note: $note, id: $id }';
   }
 
+  Todo fromString(String str) {
+
+    List<String> chunks = str.split(',');
+    bool isComplete = toBoolean(chunks[0].substring(17));
+    //print (isComplete);
+    
+    String task = chunks[1].substring(7);
+    //print(task);
+    
+    String note = chunks[2].substring(7);
+    //print(note);
+    
+    // int id = toInt(chunks[3].substring(4, chunks[3].lastIndexOf(' ')));
+    
+    // print('$id');
+    
+    return Todo(task, note: note, complete: isComplete);
+  }
+
+  /*
+
+  toJSONEncodable() {
+    Map<String, dynamic> m = Map();
+
+    m['id'] = this.id;
+    m['task'] = this.task;
+    m['complete'] = this.complete;
+    m['note'] = this.note;
+
+    return m;
+  }
+
+  Todo fromJSON (Map map) {
+    return Todo(
+      map['task'],
+      complete: map['complete'],
+      id: map['id'],
+      note: map['note'],
+    );
+  }
+*  Not for local storage
+*/
   // TodoEntity toEntity() {
   //   return TodoEntity(task, id, note, complete);
   // }
