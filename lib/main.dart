@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon/dataset_one.dart';
-import 'package:flutter_hackathon/Screens/avg_amt_chart.dart';
-import 'package:flutter_hackathon/Screens/set_goal.dart';
+import 'package:flutter_hackathon/screens/avg_amt_chart.dart';
+import 'package:flutter_hackathon/screens/set_goal.dart';
+import 'package:flutter_hackathon/screens/weekly_progress.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter_hackathon/constants.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: kAppTheme, //look in the constants file
-        home: PickOptions());
+        home: WeeklyProgress());
     // can run BarChartSample3() to see chart, routing not working yet due to some type conflict
   }
 }
