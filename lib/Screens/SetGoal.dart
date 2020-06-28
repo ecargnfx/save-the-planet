@@ -35,7 +35,7 @@ class _SetGoalState extends State<SetGoal> {
     if (currentCustomTodo != '') {
       setState(() {
         Todo todo = Todo(currentCustomTodo);
-        customTodos.add(todoToItem(todo));
+        customTodos.insert(0, todoToItem(todo));
         currentCustomTodo = '';
         customTodoController.clear();
       });
