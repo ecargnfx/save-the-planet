@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hackathon/constants.dart';
 import 'package:todos_app_core/todos_app_core.dart';
-import '../Todo.dart';
+import '../todo.dart';
 
 class TodoItem extends StatelessWidget {
   final DismissDirectionCallback onDismissed;

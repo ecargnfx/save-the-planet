@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hackathon/Todo.dart';
+import 'package:flutter_hackathon/todo.dart';
 import 'package:flutter_hackathon/constants.dart';
 import 'package:flutter_hackathon/data-lists/racial-justice-action-list.dart';
-import 'package:flutter_hackathon/widgets/TodoItem.dart';
+import 'package:flutter_hackathon/widgets/todo-item.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 class SetGoal extends StatefulWidget {
@@ -25,11 +25,11 @@ class _SetGoalState extends State<SetGoal> {
 
   }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  // }
 
   void addTodoItem() {
     if (currentCustomTodo != '') {
