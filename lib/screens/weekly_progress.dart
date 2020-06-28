@@ -94,13 +94,13 @@ class _WeeklyProgressState extends State<WeeklyProgress> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  Icon(Icons.not_interested, color: Colors.grey[500]),
+                  Icon(Icons.check_circle, color: Colors.green),
                   Icon(Icons.not_interested, color: Colors.grey[500]),
                   Icon(Icons.check_circle, color: Colors.green),
                   Icon(Icons.check_circle, color: Colors.green),
                   Icon(Icons.check_circle, color: Colors.green),
                   Icon(Icons.not_interested, color: Colors.grey[500]),
-                  Icon(Icons.not_interested, color: Colors.grey[500]),
+                  Icon(Icons.check_circle, color: Colors.green),
                 ],
               ),
             )
@@ -146,7 +146,35 @@ class _WeeklyProgressState extends State<WeeklyProgress> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(children: weeks),
+          child: Column(
+            children: <Widget>[
+              Card(
+                  child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: Text('Your Progress This Week',
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: LinearProgressIndicator(
+                          value: 0.4, backgroundColor: Colors.grey[300]),
+                    )
+                  ],
+                ),
+              )),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Previous Weeks',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+              ),
+              Column(children: weeks)
+            ],
+          ),
         ),
       ),
     );
