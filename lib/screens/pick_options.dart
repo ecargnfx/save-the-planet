@@ -21,7 +21,7 @@ class PickOptions extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return SetGoal(kCarbonTopic);
+                      return SetGoal();
                     },
                   ),
                 );
@@ -35,7 +35,7 @@ class PickOptions extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return SetGoal(kRaceTopic);
+                      return SetGoal();
                     },
                   ),
                 );
@@ -49,7 +49,7 @@ class PickOptions extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return SetGoal(kPlasticTopic);
+                      return SetGoal();
                     },
                   ),
                 );

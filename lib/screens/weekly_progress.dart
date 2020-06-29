@@ -138,7 +138,7 @@ class _WeeklyProgressState extends State<WeeklyProgress> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Color(0xFF2f2c4a),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),

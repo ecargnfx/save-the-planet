@@ -8,8 +8,6 @@ import 'package:numberpicker/numberpicker.dart';
 import 'package:cross_local_storage/cross_local_storage.dart';
 
 class SetGoal extends StatefulWidget {
-
-
   @override
   _SetGoalState createState() => _SetGoalState();
 }
@@ -22,10 +20,7 @@ class _SetGoalState extends State<SetGoal> {
   TextEditingController customTodoController = TextEditingController();
   LocalStorageInterface storage;
 
-  void saveTodos () async {
-    
-    
-  }
+  void saveTodos() async {}
 
   @override
   void initState() {
@@ -46,22 +41,20 @@ class _SetGoalState extends State<SetGoal> {
 
   TodoItem todoToItem(Todo todo) {
     return TodoItem(
-      onDismissed: null, 
-      onTap: null, 
-      onCheckboxChanged: (checked) {
-        setState(() {
-          
-        });
-      }, 
-      todo: todo);
+        onDismissed: null,
+        onTap: null,
+        onCheckboxChanged: (checked) {
+          setState(() {
+             = todo.copyWith(complete: checked);
+          });
+        },
+        todo: todo);
   }
 
   List<TodoItem> buildSuggestionsList(List<Todo> todoList) {
     List<TodoItem> suggestionsList = [];
     for (Todo todo in todoList) {
-      suggestionsList.add(
-        todoToItem(todo)
-      );
+      suggestionsList.add(todoToItem(todo));
     }
     return suggestionsList;
   }
@@ -77,15 +70,12 @@ class _SetGoalState extends State<SetGoal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Set Your Goal'),
-      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           SizedBox(width: double.infinity), //widens column
-          Text('I will commit to ' ),
+          Text('I will commit to '),
           Expanded(
             child: TextFormField(
               initialValue: 'Climate and Social Activism',
@@ -95,15 +85,14 @@ class _SetGoalState extends State<SetGoal> {
             //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               NumberPicker.integer(
-                initialValue: _actionsWeekly,
-                  minValue: 1, 
-                  maxValue: 70, 
+                  initialValue: _actionsWeekly,
+                  minValue: 1,
+                  maxValue: 70,
                   onChanged: (value) {
                     setState(() {
-                    _actionsWeekly = value;
+                      _actionsWeekly = value;
                     });
-                  }
-                ),
+                  }),
               Text('times per week'),
             ],
           ),
@@ -115,27 +104,26 @@ class _SetGoalState extends State<SetGoal> {
           // ),
           Text('I will do this by doing the following:'),
           Row(
-            //crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                child: TextField(
-                  decoration: kTodoInputDecoration,
-                  controller: customTodoController,
-                  onChanged: (value) {
-                    currentCustomTodo = value;
-                  },
-                  onSubmitted: (str) {
-                    currentCustomTodo = str;
-                    addTodoItem();
-                  },
+              //crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: TextField(
+                    decoration: kTodoInputDecoration,
+                    controller: customTodoController,
+                    onChanged: (value) {
+                      currentCustomTodo = value;
+                    },
+                    onSubmitted: (str) {
+                      currentCustomTodo = str;
+                      addTodoItem();
+                    },
+                  ),
                 ),
-              ),
-              FlatButton(
-                onPressed: addTodoItem, 
-                child: Text('Add'),
-              ),
-            ]
-          ),
+                FlatButton(
+                  onPressed: addTodoItem,
+                  child: Text('Add'),
+                ),
+              ]),
           Expanded(
             child: ListView(
               children: todosToShow(buildSuggestionsList(kRaceList)),
@@ -146,5 +134,3 @@ class _SetGoalState extends State<SetGoal> {
     );
   }
 }
-
-

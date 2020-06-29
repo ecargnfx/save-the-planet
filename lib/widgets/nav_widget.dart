@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hackathon/Todo.dart';
-import 'package:flutter_hackathon/screens/pick_options.dart';
+import 'package:flutter_hackathon/screens/set_goal.dart';
+import 'package:flutter_hackathon/screens/avg_amt_chart.dart';
 import 'package:flutter_hackathon/screens/weekly_progress.dart';
 
 class Nav extends StatefulWidget {
@@ -11,9 +11,9 @@ class Nav extends StatefulWidget {
 class _NavState extends State<Nav> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    PickOptions(),
+    Chart(),
+    SetGoal(),
     WeeklyProgress(),
-    PlaceholderWidget(Colors.orange),
   ];
 
   @override
@@ -34,7 +34,7 @@ class _NavState extends State<Nav> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.flag),
-            title: Text('My Goals'),
+            title: Text('Set Goals'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
