@@ -45,7 +45,7 @@ class _SetGoalState extends State<SetGoal> {
         onTap: null,
         onCheckboxChanged: (checked) {
           setState(() {
-             = todo.copyWith(complete: checked);
+            todo.copyWith(complete: checked);
           });
         },
         todo: todo);

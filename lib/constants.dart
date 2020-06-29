@@ -23,8 +23,10 @@ String kRaceTopic = 'Reducing Racial Injustice';
 String kPlasticTopic = 'Reducing Plastic Pollution';
 
 //placeholder styles for now; change them here
-TextStyle kTodoItemTextStyle = kAppTheme.textTheme.subtitle1;
-TextStyle kTodoNoteTextStyle = kAppTheme.textTheme.subtitle2;
+TextStyle kTodoItemTextStyle = TextStyle(
+  color: Colors.white,
+);
+TextStyle kTodoNoteTextStyle = kTodoItemTextStyle;
 
 const InputDecoration kTodoInputDecoration =
     InputDecoration(hintText: 'Add your own task');
