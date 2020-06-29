@@ -139,10 +139,6 @@ class _WeeklyProgressState extends State<WeeklyProgress> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      appBar: AppBar(
-        title: Text("My Progress"),
-        backgroundColor: Colors.blueGrey[900],
-      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),

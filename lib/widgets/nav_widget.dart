@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hackathon/Todo.dart';
 import 'package:flutter_hackathon/screens/pick_options.dart';
-import 'package:flutter_hackathon/screens/set_goal.dart';
+import 'package:flutter_hackathon/screens/weekly_progress.dart';
 
 class Nav extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class _NavState extends State<Nav> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     PickOptions(),
-    PlaceholderWidget(Colors.blue),
+    WeeklyProgress(),
     PlaceholderWidget(Colors.orange),
   ];
 
@@ -51,13 +52,6 @@ class _NavState extends State<Nav> {
   }
 }
 
-class TestWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(child: Center(child: Text('Hello')));
-  }
-}
-
 class PlaceholderWidget extends StatelessWidget {
   final Color color;
 
@@ -70,3 +64,5 @@ class PlaceholderWidget extends StatelessWidget {
     );
   }
 }
+
+//TODO: get chart working, Theme data

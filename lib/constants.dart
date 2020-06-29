@@ -11,6 +11,7 @@ final ThemeData kAppTheme = ThemeData(
   // Notice that the counter didn't reset back to zero; the application
   // is not restarted.
   primarySwatch: Colors.blue,
+  backgroundColor: Color(0xFF1D1E33),
   // This makes the visual density adapt to the platform that you run
   // the app on. For desktop platforms, the controls will be smaller and
   // closer together (more dense) than on mobile platforms.
@@ -25,7 +26,5 @@ String kPlasticTopic = 'Reducing Plastic Pollution';
 TextStyle kTodoItemTextStyle = kAppTheme.textTheme.subtitle1;
 TextStyle kTodoNoteTextStyle = kAppTheme.textTheme.subtitle2;
 
-const InputDecoration kTodoInputDecoration = InputDecoration(
-  hintText: 'Add your own task'
-  
-);
+const InputDecoration kTodoInputDecoration =
+    InputDecoration(hintText: 'Add your own task');
