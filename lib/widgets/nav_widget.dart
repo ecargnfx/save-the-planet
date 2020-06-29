@@ -20,7 +20,7 @@ class _NavState extends State<Nav> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Flutter App'),
+        title: Text('Activism Made Easy'),
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
